@@ -1,4 +1,4 @@
-project('sway-notificaton-center', ['c', 'vala'],
+project('sway-notification-center', ['c', 'vala'],
   version: '0.12.6',
   meson_version: '>= 0.60.0',
   default_options: [ 'warning_level=2' ],
@@ -6,6 +6,7 @@ project('sway-notificaton-center', ['c', 'vala'],
 
 add_project_arguments(['-w'], language: 'c')
 add_project_arguments(['-Wno-error=int-conversion'], language: 'c')
+add_project_arguments(['-DG_LOG_DOMAIN="swaync"'], language: 'c')
 add_project_arguments(['--enable-gobject-tracing'], language: 'vala')
 add_project_arguments(['--enable-checking'], language: 'vala')
 

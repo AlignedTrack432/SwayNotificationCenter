@@ -16,6 +16,7 @@ version = 'swaync @0@'.format(version)
 const_config_data = configuration_data()
 const_config_data.set_quoted('VERSION', version)
 const_config_data.set_quoted('VERSION_NUM', meson.project_version())
+const_config_data.set_quoted('CONFIG_PATH', join_paths(get_option('prefix'), config_path))
 constants = configure_file(
   input : 'constants.vala.in',
   output : 'constants.vala',
@@ -50,6 +51,8 @@ widget_sources = [
   'controlCenter/widgets/backlight/backlightUtil.vala',
   # Widget: Inhibitors
   'controlCenter/widgets/inhibitors/inhibitors.vala',
+  # Widget: Calendar
+  'controlCenter/widgets/calendar/calendar.vala',
 ]
 
 app_sources = [
